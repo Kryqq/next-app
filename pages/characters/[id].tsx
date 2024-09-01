@@ -4,7 +4,7 @@ import { HeadMeta } from '@/components/headMeta/HeadMeta';
 import { getLayout } from '@/components/layout/layout';
 import { useCharacter } from '@/assets/hooks/useCharacter';
 
-function Character() {
+const Character = () => {
    const character = useCharacter();
 
    return (
