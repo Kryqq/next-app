@@ -1,0 +1,8 @@
+.links {
+   display: flex;
+   column-gap: 20px;
+   & a:hover {
+      cursor: pointer;
+      color: blue;
+   }
+}
