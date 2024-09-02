@@ -4,9 +4,7 @@ import { API } from '@/assets/api/api';
 import { CharacterType, ResponseType } from '@/assets/api/rick-and-morty-api';
 import { PageWrapper } from '@/components/pageWrapper/PageWrapper';
 import { Header } from '@/components/header/Header';
-
-import { useCharacters } from '@/assets/hooks/useCharacters';
-import { CharacterCard } from '@/components/characterCard/CharacterCard';
+import { CharacterCard } from '@/components/card/characterCard/CharacterCard';
 import { HeadMeta } from '@/components/headMeta/HeadMeta';
 
 export const getStaticProps = async () => {
@@ -24,15 +22,10 @@ type Props = {
 const Characters = (props: Props) => {
    const { characters } = props;
    const charactersList = characters.results.map((character) => {
-      return <div key={character.id}>{character.name}</div>;
+      return <CharacterCard key={character.id} character={character} />;
    });
 
-   return (
-      <PageWrapper>
-         <Header />
-         {charactersList}
-      </PageWrapper>
-   );
+   return <PageWrapper>{charactersList}</PageWrapper>;
 };
 
 Characters.getLayout = getLayout;

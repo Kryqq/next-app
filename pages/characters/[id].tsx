@@ -1,5 +1,5 @@
 import React from 'react';
-import { CharacterCard } from '@/components/characterCard/CharacterCard';
+import { CharacterCard } from '@/components/card/characterCard/CharacterCard';
 import { HeadMeta } from '@/components/headMeta/HeadMeta';
 import { getLayout } from '@/components/layout/layout';
 import { useCharacter } from '@/assets/hooks/useCharacter';

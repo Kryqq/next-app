@@ -3,11 +3,12 @@ import Image from 'next/image';
 import styles from '@/styles/Home.module.css';
 import { HeadMeta } from '@/components/headMeta/HeadMeta';
 import { getLayout } from '@/components/layout/layout';
+import { Header } from '@/components/header/Header';
 
 function Home() {
    return (
       <>
-         <HeadMeta title="Create next app" />
+     
          <div className={styles.description}>
             <p>
                Get started by editing&nbsp;
