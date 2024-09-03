@@ -1,9 +1,8 @@
-import Head from 'next/head';
+
 import Image from 'next/image';
 import styles from '@/styles/Home.module.css';
-import { HeadMeta } from '@/components/headMeta/HeadMeta';
-import { getLayout } from '@/components/layout/layout';
-import { Header } from '@/components/header/Header';
+import { getLayout } from '@/components/layout/baseLayout/BaseLayout';
+
 
 function Home() {
    return (

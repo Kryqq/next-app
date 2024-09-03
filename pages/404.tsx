@@ -1,4 +1,4 @@
-import { getLayout } from "@/components/layout/layout";
+import { getLayout } from "@/components/layout/Layout";
 
 const NotFound = () => {
    return (
