@@ -19,10 +19,15 @@ export const Card = (props: PropsWithChildren<PropsType>) => {
 const CardBlock = styled.div`
    display: flex;
    flex-direction: column;
-   padding: 15px;
-   border: 2px solid #666491;
-   box-shadow: 0 2px 3px 1px #666491;
-   border-radius: 15px;
+   align-items: center;
+   justify-content: center;
+   row-gap: 6px;
+   border-radius: 10px;
+   background-color: rgb(177, 177, 177);
+   padding-top: 6px;
+   margin-top: 20px;
+   gap: 5px;
+   overflow: hidden;
 `;
 
 const Name = styled.div`
