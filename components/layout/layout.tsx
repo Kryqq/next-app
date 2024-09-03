@@ -14,7 +14,7 @@ export const Layout: NextPage<PropsWithChildren> = (props) => {
    );
 };
 
-export const getLayout = (page: React.ReactElement) => <Layout>{page}</Layout>;
+
 
 const Container = styled.div`
    display: flex;
