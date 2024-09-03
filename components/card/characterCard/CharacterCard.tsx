@@ -1,18 +1,40 @@
-import { Character } from '@/assets/hooks/useCharacters';
 import Image from 'next/image';
-import styles from './CharacterCard.module.scss';
+
+import { CharacterType } from '@/assets/api/rick-and-morty-api';
+
+import aliveStatus from '@/public/statuses/alive.png';
+import deadStatus from '@/public/statuses/dead.png';
+import unknownStatus from '@/public/statuses/unknown.png';
+
+import Link from 'next/link';
+
+import { Card } from '../Card';
+import styled from 'styled-components';
 
 type Props = {
-   character: Character;
+   character: CharacterType;
 };
 
-export const CharacterCard = (props: Props) => {
-   const { character } = props;
+const statusImages = {
+   Alive: aliveStatus,
+   Dead: deadStatus,
+   unknown: unknownStatus,
+};
+
+const CharacterCard = (props: Props) => {
+   const { id, image, name, status } = props.character;
 
    return (
-      <div className={styles.card}>
-         <div>{character.name}</div>
-         <Image src={character.image} alt={character.name} width={300} height={300} />
-      </div>
+      <Card name={name}>
+         <Link href={`/characters/${id}`}>
+            <ImageBlock src={image} alt={name} width={300} height={300} priority />
+            <Image src={statusImages[status]} alt={status}></Image>
+         </Link>
+      </Card>
    );
 };
+const ImageBlock = styled(Image)`
+   object-fit: cover;
+`;
+
+export default CharacterCard;
