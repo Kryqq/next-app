@@ -1,13 +1,12 @@
 import React from 'react';
-import { getLayout } from '@/components/layout/layout';
 import { PageWrapper } from '@/components/pageWrapper/PageWrapper';
-import { Header } from '@/components/header/Header';
 import { dehydrate, QueryClient, useQuery } from '@tanstack/react-query';
 import { LocationType } from '@/assets/api/rick-and-morty-api';
 import { ResponseType } from '@/assets/api/rick-and-morty-api';
 import { Card } from '@/components/card/Card';
+import { BaseLayout, getLayout } from '@/components/layout/baseLayout/BaseLayout';
 
-const getLocations = () => {
+const getLocations = (): Promise<ResponseType<LocationType>> => {
    return fetch('https://rickandmortyapi.com/api/location', {
       method: 'GET',
    }).then((res) => res.json());
@@ -45,5 +44,7 @@ const Locations = () => {
    return <PageWrapper>{locationsList}</PageWrapper>;
 };
 
-Locations.getLayout = getLayout;
+Locations.getLayout = (page: React.ReactElement) => {
+   return <BaseLayout>{page}</BaseLayout>;
+};
 export default Locations;
