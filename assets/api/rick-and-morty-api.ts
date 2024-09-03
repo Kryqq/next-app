@@ -1,5 +1,5 @@
 import { AxiosInstance } from 'axios';
-import { Nullable } from '../types/nullable';
+import { Nullable } from '@/types/nullable';
 
 export type ResponseType<T> = {
    info: InfoType;
