@@ -2,8 +2,13 @@ import React from 'react';
 import { API } from '@/assets/api/api';
 import { CharacterType, ResponseType } from '@/assets/api/rick-and-morty-api';
 import { PageWrapper } from '@/components/pageWrapper/PageWrapper';
-import  CharacterCard  from '@/components/card/characterCard/CharacterCard';
 import { BaseLayout } from '@/components/layout/baseLayout/BaseLayout';
+import dynamic from 'next/dynamic';
+
+const CharacterCard = dynamic(() => import('components/card/characterCard/CharacterCard'), {
+   ssr: false,
+   loading: () => <p>Loading...</p>,
+});
 
 export const getStaticProps = async () => {
    const characters = await API.rickAndMorty.getCharacters();
@@ -11,6 +16,8 @@ export const getStaticProps = async () => {
       props: {
          characters,
       },
+
+      revalidate: 60,
    };
 };
 type Props = {
@@ -23,7 +30,7 @@ const Characters = (props: Props) => {
       return <CharacterCard key={character.id} character={character} />;
    });
 
-   return <PageWrapper title="Characters" >{charactersList}</PageWrapper>;
+   return <PageWrapper title="Characters">{charactersList}</PageWrapper>;
 };
 
 Characters.getLayout = function (page: React.ReactElement) {
