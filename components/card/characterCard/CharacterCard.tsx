@@ -10,6 +10,7 @@ import Link from 'next/link';
 
 import { Card } from '../Card';
 import styled from 'styled-components';
+import { Status } from './status/status';
 
 type Props = {
    character: CharacterType;
@@ -28,7 +29,7 @@ const CharacterCard = (props: Props) => {
       <Card name={name}>
          <Link href={`/characters/${id}`}>
             <ImageBlock src={image} alt={name} width={300} height={300} priority />
-            <Image src={statusImages[status]} alt={status}></Image>
+            <Status src={statusImages[status]} status={status} />
          </Link>
       </Card>
    );
