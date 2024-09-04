@@ -17,3 +17,4 @@ export const HeadMeta = (props: PropsType) => {
       </Head>
    );
 };
+    

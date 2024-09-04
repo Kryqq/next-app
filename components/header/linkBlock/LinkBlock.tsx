@@ -7,7 +7,7 @@ type PropsType = {
 
 export const LinkBlock = (props: PropsType) => {
    const { title } = props;
-
+ 
    return (
       <LinkWrapper>
          <Link href={`/${title.toLowerCase()}`}>
