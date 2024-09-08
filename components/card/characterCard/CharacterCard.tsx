@@ -1,13 +1,10 @@
+'use client'
 import Image from 'next/image';
-
 import { CharacterType } from '@/assets/api/rick-and-morty-api';
-
 import aliveStatus from '@/public/statuses/alive.png';
 import deadStatus from '@/public/statuses/dead.png';
 import unknownStatus from '@/public/statuses/unknown.png';
-
 import Link from 'next/link';
-
 import { Card } from '../Card';
 import styled from 'styled-components';
 import { Status } from './status/status';
